@@ -17,13 +17,21 @@ def main():
 
     player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
 
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    updatable.add(player)
+    drawable.add(player)
+
     while True: 
         for event in pygame.event.get():
             if event.type == pygame.QUIT: #if user closes the window
                 return
             
         pygame.Surface.fill(screen, (0,0,0))
-        player.draw(screen)
+        for d in drawable:
+            d.draw(screen)
+        updatable.update(dt)
         pygame.display.flip()
         
 
