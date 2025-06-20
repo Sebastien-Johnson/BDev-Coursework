@@ -72,6 +72,5 @@ def main():
         print(f"{passed} passed, {failed} failed")
 
 
-test_cases = run_cases
-
+test_cases = submit_cases
 main()
